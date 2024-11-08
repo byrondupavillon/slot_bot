@@ -1,0 +1,117 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.virtualenv/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Python specific
+*.env
+*.venv
+*.envrc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+
+# pipenv
+Pipfile
+Pipfile.lock
+
+# Poetry
+poetry.lock
+.pdm.toml
+
+# Testing
+.tox/
+.nox/
+coverage.*
+.cache
+pytest_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+.secret
+*.key
+
+# Images and screenshots
+debug_logs/
+*.png
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.save
+
+# Editor/IDE specific
+.vscode/
+.idea/*
+*.sublime-project
+*.sublime-workspace
+
+# PyCharm
+*.iml
+.idea/
+*.iws
+*.ipr
+
+# JetBrains
+*.idea/
+*.iml
+.idea/*
+.idea/*/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# C extensions
+*.so
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Mac specific
+.DS_Store
