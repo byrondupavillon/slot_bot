@@ -1,3 +1,4 @@
+# python.exe -m pip install --upgrade pip
 # pip install -r requirements.txt
 
 from coral_wager_20_get_10_free_spins.coral import run_coral_task

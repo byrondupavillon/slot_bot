@@ -28,5 +28,5 @@ def capture_and_show_region(region):
 
 # Example usage
 # Define the region (left, top, width, height)
-region = (2406, 818, 349, 54)
+region = (781, 558, 357, 68)
 capture_and_show_region(region)

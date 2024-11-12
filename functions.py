@@ -42,7 +42,7 @@ def open_url_and_wait_for_image(url, image_path, region, timeout=30):
     return False
 
 
-def detect_image_in_region(image_path, region, confidence=0.9):
+def detect_image_in_region(image_path, region, confidence=0.9, timeout=30):
     """
        Detects an image on the screen within a specified region.
 
@@ -54,12 +54,28 @@ def detect_image_in_region(image_path, region, confidence=0.9):
        Returns:
            Coordinates of the center of the detected image, or None if not found.
        """
-    try:
-        image_location = pyautogui.locateCenterOnScreen(image_path, region=region, confidence=confidence)
-        return image_location
-    except Exception as e:
-        print(f"Error detecting image: {e}")
-        return None
+    # try:
+    #     image_location = pyautogui.locateCenterOnScreen(image_path, region=region, confidence=confidence)
+    #     return image_location
+    # except Exception as e:
+    #     print(f"Error detecting image: {e}")
+    #     return None
+
+    start_time = time.time()
+
+    while time.time() - start_time < timeout:
+        try:
+            image_location = pyautogui.locateCenterOnScreen(image_path, region=region, confidence=confidence)
+            if image_location is not None:
+                print("Image found!")
+                return image_location
+            print("Looking for image...")
+            time.sleep(1)  # Adjust sleep time for faster detection
+        except pyautogui.ImageNotFoundException:
+            print("Image not found!")
+
+    print("Timeout reached. Image not found.")
+    return False
 
 
 def click_found_image(image_location, num_clicks=0):
