@@ -50,6 +50,19 @@ def check_for_deposit_button():
     return False
 
 
+def open_coral_wager_and_check_spin_button():
+    """Open the Coral wager site and check for spin button"""
+    url = "https://www.coral.co.uk/en/games/launchng/playtechgoldentour"
+    coral_logo_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
+    coral_logo_region = (1728, 159, 130, 32)
+    print("Opening Coral website...")
+    if not open_url_and_wait_for_image(url, coral_logo_path, coral_logo_region):
+        print("Failed to load the Coral website.")
+        return False
+    return True
+
+
+
 def run_coral_task():
     """Main function to run the Coral task."""
     # Step 1: Open Coral site and check for the logo
@@ -59,6 +72,7 @@ def run_coral_task():
     # Step 2: Attempt to log in or check for the deposit button
     if attempt_login():
         attempt_login_prompt_button()
+        check_for_deposit_button()
         print("Successfully logged in.")
     elif check_for_deposit_button():
         print("Already logged in.")
@@ -67,4 +81,5 @@ def run_coral_task():
         return
 
     # Step 3: Check for Opt into Offer
+
     # Step 4: Go to Wager Page - https://www.coral.co.uk/en/games/launchng/playtechgoldentour

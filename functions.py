@@ -9,7 +9,7 @@ from datetime import datetime
 from PIL import ImageGrab
 
 
-def open_url_and_wait_for_image(url, image_path, region, timeout=5):
+def open_url_and_wait_for_image(url, image_path, region, timeout=30):
     """
     Opens a URL and waits for a specific image to appear on the screen.
 
