@@ -20,7 +20,7 @@ def attempt_login():
     login_image_path = './coral_wager_20_get_10_free_spins/images/login_btn.jpg'
     login_region = (1819, 6, 76, 43)
     print("Attempting to detect login button...")
-    login_btn_detection = detect_image_in_region(login_image_path, login_region)
+    login_btn_detection = detect_image_in_region(login_image_path, login_region, timeout=5)
     if login_btn_detection:
         print("Found login button...")
         click_found_image(login_btn_detection, num_clicks=1)
