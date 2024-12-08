@@ -63,6 +63,15 @@ def open_coral_wager_and_check_spin_button():
         return False
     return True
 
+def check_correct_wager_amount():
+    """Check to make sure that the correct bet amount is set."""
+    wager_image_path = './coral_wager_20_get_10_free_spins/images/wager_amount.jpg'
+    wager_region = (779, 972, 87, 30)
+    print("Checking for correct wager amount...")
+    if detect_image_in_region(wager_image_path, wager_region, confidence=0.7, timeout=5):
+        print("Correct wager amount found. Starting spins...")
+        return True
+    return False
 
 def run_coral_task():
     """Main function to run the Coral task."""
@@ -88,4 +97,6 @@ def run_coral_task():
     # Step 3: Check for Opt into Offer
     #open_coral_wager_and_check_spin_button()
     # Step 4: Go to Wager Page - https://www.coral.co.uk/en/games/launchng/playtechgoldentour
-    open_coral_wager_and_check_spin_button()
+    print("Directing you to Golden Tour Slot")
+    if not open_coral_wager_and_check_spin_button():
+        return
