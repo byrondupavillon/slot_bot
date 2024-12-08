@@ -85,9 +85,9 @@ def start_wagering(loop_count):
     for i in range (loop_count):
         print(f"Attempt {i + 1} of {loop_count}: Attempting to detect spin button...")
         click_spin_to_start_detection = detect_image_in_region(click_spin_to_start_image_path, click_spin_to_start_region, timeout=5)
-        spin_btn_detection = detect_image_in_region(spin_btn_path, spin_btn_region, timeout=5)
+        spin_btn_detection = detect_image_in_region(spin_btn_path, spin_btn_region, timeout=10)
 
-        if click_spin_to_start_detection:
+        if spin_btn_detection:
             print("Spin button detected! Clicking the button...")
             click_found_image(spin_btn_detection, num_clicks=1)
         else:
