@@ -47,7 +47,7 @@ def check_for_deposit_button():
     deposit_region = (1679, 5, 100, 45)
     print("Checking for deposit button...")
     if detect_image_in_region(deposit_image_path, deposit_region, confidence=0.7, timeout=5):
-        print("Deposit button found. Navigating to Codeo site...")
+        print("Deposit button found. Navigating to Slot...")
         return True
     return False
 
@@ -57,7 +57,7 @@ def open_coral_wager_and_check_spin_button():
     url = "https://www.coral.co.uk/en/games/launchng/playtechgoldentour"
     coral_logo_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
     coral_logo_region = (1150, 824, 141, 60)
-    print("Opening Coral website...")
+    print("Opening Coral Golden Tour Slot...")
     if not open_url_and_wait_for_image(url, coral_logo_path, coral_logo_region):
         print("Failed to load the Coral website.")
         return False
@@ -88,3 +88,4 @@ def run_coral_task():
     # Step 3: Check for Opt into Offer
     #open_coral_wager_and_check_spin_button()
     # Step 4: Go to Wager Page - https://www.coral.co.uk/en/games/launchng/playtechgoldentour
+    open_coral_wager_and_check_spin_button()
