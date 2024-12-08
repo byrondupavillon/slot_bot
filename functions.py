@@ -26,9 +26,6 @@ def open_url_and_wait_for_image(url, image_path, region, timeout=30):
     print("Waiting for page to load...")
 
     start_time = time.time()
-    print(timeout)  #debug
-    print(image_path) #debug
-    print(region) #debug
 
     while time.time() - start_time < timeout:
         print("Inside Loop - open_url_and_wait_for_image") #debug

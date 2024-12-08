@@ -33,7 +33,7 @@ def attempt_login_prompt_button():
     login_prompt_path = './coral_wager_20_get_10_free_spins/images/login_prompt_btn.jpg'
     login_prompt_region = (781, 558, 357, 68)
     print("Attempting to detect login prompt button...")
-    login_prompt_btn_detection = detect_image_in_region(login_prompt_path, login_prompt_region, confidence=0.98)
+    login_prompt_btn_detection = detect_image_in_region(login_prompt_path, login_prompt_region, confidence=0.98, timeout=5)
     if login_prompt_btn_detection:
         print("Found login button...")
         click_found_image(login_prompt_btn_detection, num_clicks=1)
@@ -46,7 +46,7 @@ def check_for_deposit_button():
     deposit_image_path = './coral_wager_20_get_10_free_spins/images/deposit_btn.jpg'
     deposit_region = (1679, 6, 88, 54)
     print("Checking for deposit button...")
-    if detect_image_in_region(deposit_image_path, deposit_region, confidence=0.7):
+    if detect_image_in_region(deposit_image_path, deposit_region, confidence=0.7, timeout=5):
         print("Deposit button found. Navigating to Codeo site...")
         return True
     return False
