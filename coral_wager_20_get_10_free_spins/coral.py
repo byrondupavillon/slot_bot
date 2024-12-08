@@ -78,7 +78,7 @@ def check_correct_wager_amount():
 def start_wagering(loop_count):
     """Start wagering"""
     click_spin_to_start_image_path = './coral_wager_20_get_10_free_spins/images/click_spin_to_start.jpg'
-    click_spin_to_start_region = (646, 758, 347, 30)
+    click_spin_to_start_region = (646, 758, 349, 32)
     spin_btn_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
     spin_btn_region = (1150, 824, 141, 60)
     print("Attempting to detect login button...")
