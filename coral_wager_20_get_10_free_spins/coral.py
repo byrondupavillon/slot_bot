@@ -66,7 +66,7 @@ def open_coral_wager_and_check_spin_button():
 def check_correct_wager_amount():
     """Check to make sure that the correct bet amount is set."""
     wager_image_path = './coral_wager_20_get_10_free_spins/images/wager_amount.jpg'
-    wager_region = (779, 972, 87, 30)
+    wager_region = (772, 880, 87, 30)
     print("Checking for correct wager amount...")
     if detect_image_in_region(wager_image_path, wager_region, confidence=0.7, timeout=5):
         print("Correct wager amount found. Starting spins...")
