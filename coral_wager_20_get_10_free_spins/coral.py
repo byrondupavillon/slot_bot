@@ -100,3 +100,4 @@ def run_coral_task():
     print("Directing you to Golden Tour Slot")
     if not open_coral_wager_and_check_spin_button():
         return
+    check_correct_wager_amount()
