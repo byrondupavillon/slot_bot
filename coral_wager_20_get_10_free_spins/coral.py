@@ -75,17 +75,27 @@ def check_correct_wager_amount():
     return False
 
 
-def start_wagering():
+def start_wagering(loop_count):
     """Start wagering"""
-    spin_image_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
-    spin_region = (1150, 824, 141, 60)
+    click_spin_to_start_image_path = './coral_wager_20_get_10_free_spins/images/click_spin_to_start.jpg'
+    click_spin_to_start_region = (646, 758, 347, 30)
+    spin_btn_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
+    spin_btn_region = (1150, 824, 141, 60)
     print("Attempting to detect login button...")
-    spin_btn_detection = detect_image_in_region(spin_image_path, spin_region, timeout=5)
-    if spin_btn_detection:
-        print("Clicking spin button...")
-        click_found_image(spin_btn_detection, num_clicks=1)
-        return True
-    return False
+    for i in range (loop_count):
+        print(f"Attempt {i + 1} of {loop_count}: Attempting to detect spin button...")
+        click_spin_to_start_detection = detect_image_in_region(click_spin_to_start_image_path, click_spin_to_start_region, timeout=5)
+        spin_btn_detection = detect_image_in_region(spin_btn_path, spin_btn_region, timeout=5)
+
+        if click_spin_to_start_detection:
+            print("Spin button detected! Clicking the button...")
+            click_found_image(spin_btn_detection, num_clicks=1)
+        else:
+            print("Spin button not detected within the timeout period.")
+
+        time.sleep(1)  # Adjust the delay as necessary
+
+    print("Completed all attempts.")
 
 
 def run_coral_task():
@@ -116,4 +126,4 @@ def run_coral_task():
     if not open_coral_wager_and_check_spin_button():
         return
     check_correct_wager_amount()
-    start_wagering()
+    start_wagering(10)
