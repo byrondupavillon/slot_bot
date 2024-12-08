@@ -44,7 +44,7 @@ def attempt_login_prompt_button():
 def check_for_deposit_button():
     """Check for the deposit button and navigate to a new site if found."""
     deposit_image_path = './coral_wager_20_get_10_free_spins/images/deposit_btn.jpg'
-    deposit_region = (1679, 6, 88, 54)
+    deposit_region = (1679, 5, 100, 45)
     print("Checking for deposit button...")
     if detect_image_in_region(deposit_image_path, deposit_region, confidence=0.7, timeout=5):
         print("Deposit button found. Navigating to Codeo site...")
