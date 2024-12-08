@@ -63,6 +63,7 @@ def open_coral_wager_and_check_spin_button():
         return False
     return True
 
+
 def check_correct_wager_amount():
     """Check to make sure that the correct bet amount is set."""
     wager_image_path = './coral_wager_20_get_10_free_spins/images/wager_amount.jpg'
@@ -72,6 +73,20 @@ def check_correct_wager_amount():
         print("Correct wager amount found. Starting spins...")
         return True
     return False
+
+
+def start_wagering():
+    """Start wagering"""
+    spin_image_path = './coral_wager_20_get_10_free_spins/images/spin_btn.jpg'
+    spin_region = (1150, 824, 141, 60)
+    print("Attempting to detect login button...")
+    spin_btn_detection = detect_image_in_region(spin_image_path, spin_region, timeout=5)
+    if spin_btn_detection:
+        print("Clicking spin button...")
+        click_found_image(spin_btn_detection, num_clicks=1)
+        return True
+    return False
+
 
 def run_coral_task():
     """Main function to run the Coral task."""
@@ -101,3 +116,4 @@ def run_coral_task():
     if not open_coral_wager_and_check_spin_button():
         return
     check_correct_wager_amount()
+    start_wagering()
