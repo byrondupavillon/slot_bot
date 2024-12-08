@@ -36,7 +36,7 @@ def open_url_and_wait_for_image(url, image_path, region, timeout=30):
             print("Looking for image...")
             time.sleep(1)  # Adjust sleep time for faster detection
         except pyautogui.ImageNotFoundException:
-            print("Image not found!")
+            print("Image not found! - open_url_and_wait_for_image")
             time.sleep(1)
 
     print("Timeout reached. Image not found.")
@@ -73,7 +73,8 @@ def detect_image_in_region(image_path, region, confidence=0.9, timeout=30):
             print("Looking for image...")
             time.sleep(1)  # Adjust sleep time for faster detection
         except pyautogui.ImageNotFoundException:
-            print("Image not found!")
+            print("Image not found! - detect_image_in_region")
+            time.sleep(1)
 
     print("Timeout reached. Image not found.")
     return False
